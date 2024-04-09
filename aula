@@ -12,10 +12,11 @@ int main()
   
   printf("\nKG do 1° Jogador: ");
   scanf("%f", &jg.peso);
-  printf("Altura do 1°\n");
+  printf("Altura do 1°:\n");
   scanf("%f", &jg.alt);
-  printf("Inicial do Jogador\n");
+  printf("Inicial do Jogador:\n");
   scanf("%s", jg.i_nome);
-
+  printf("Digite o numero da camisa do Jogador\n:");
+  scanf("%d",&jg.num);
     return 0;
 }
