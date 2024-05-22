@@ -1,0 +1,36 @@
+def receber_dados_cliente():
+
+    dados_cliente = {}
+  
+    nome = input("Digite o nome do cliente: ")
+    dados_cliente["nome"] = nome
+  
+    email = input ("Digite o email do cliente: ")
+    dados_cliente["email"] = email
+  
+    idade = int(input("Digite a idade do cliente: "))
+    dados_cliente["idade"] = idade
+  
+    return dados_cliente
+  
+def exibir_dados_cliente (dados_cliente):
+    
+    print("---------------------------------")
+    print(f"nome: {dados_cliente['nome']}")
+    print(f"email: {dados_cliente['email']}")
+    print(f"idade:{dados_cliente['idade']}")
+    print("---------------------------------")
+    
+def salvar_dados_cliente(dados_cliente , nome_arquivo):
+    
+    with open(nome_arquivo, 'a') as arquivo:
+      arquivo.write(f"{dados_cliente['nome']},{dados_cliente['email']},{dados_cliente['idade']}\n")
+        
+dados_cliente = receber_dados_cliente()
+    
+exibir_dados_cliente(dados_cliente)
+    
+nome_arquivo = "dados_cliente.txt"
+salvar_dados_cliente(dados_cliente, nome_arquivo)
+    
+print(f"Dados do cliente salvos com sucesso no arquivo){nome_arquivo}")
